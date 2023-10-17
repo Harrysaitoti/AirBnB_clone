@@ -1,5 +1,7 @@
+Can't create, edit, or upload … You don't have enough storage to create, edit, and upload files. Get 100 GB of storage for MAD 19.00 MAD 4.75/month for 3 months.
+console.py
 #!/usr/bin/python3
-"""Define the H BnB console."""
+"""Defines the HBnB console."""
 import cmd
 import re
 from shlex import split
@@ -32,8 +34,9 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """Define the HolbertonBnB command interpreter.
-    Attribute:
+    """Defines the HolbertonBnB command interpreter.
+
+    Attributes:
         prompt (str): The command prompt.
     """
 
@@ -113,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
             print(objdict["{}.{}".format(argl[0], argl[1])])
 
     def do_destroy(self, arg):
-        """Usage : destroy <class> <id> or <class>.destroy(<id>)
+        """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Delete a class instance of a given id."""
         argl = parse(arg)
         objdict = storage.all()
@@ -146,7 +149,7 @@ class HBNBCommand(cmd.Cmd):
             print(objl)
 
     def do_count(self, arg):
-        """Usage:count <class> or <class>.count()
+        """Usage: count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
         argl = parse(arg)
         count = 0
@@ -156,7 +159,7 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def do_update(self, arg):
-        """Usage:update <class> <id> <attribute_name> <attribute_value> or
+        """Usage: update <class> <id> <attribute_name> <attribute_value> or
        <class>.update(<id>, <attribute_name>, <attribute_value>) or
        <class>.update(<id>, <dictionary>)
         Update a class instance of a given id by adding or updating
